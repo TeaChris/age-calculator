@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+:root {
+  --color-white: hsl(0, 0%, 100%);
+  --color-off-white: hsl(0, 0%, 94%);
+  --color-light-grey: hsl(0, 0%, 86%);
+  --color-smokey-grey: hsl(0, 1%, 44%);
+  --color-off-black: hsl(0, 0%, 8%);
+  --color-purple: hsl(259, 100%, 65%);
+  --color-light-red: hsl(0, 100%, 67%);
+
+  --container-width-lg: 80%;
+  --container-width-sm: 90%;
+
+  --transition: all 500ms ease-in-out;
+}
+
+body {
+  background: var(--color-off-white);
+  display: grid;
+  place-items: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 1rem;
+}
+
+.inputs {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 0.5rem;
+}
+
+label {
+  font-weight: 100;
+  color: var(--color-smokey-grey);
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+}
+
+input {
+  width: 8rem;
+  height: 3.5rem;
+  padding: 1rem;
+  font-size: 1.5rem;
+  background: transparent;
+  border-radius: 0.5rem;
+  caret-color: var(--color-purple);
+  border: 1px solid var(--color-light-grey);
+}
+
+input:focus {
+  border: 1px solid var(--color-purple);
+}
+
+.underlineIcon {
+  display: flex;
+  align-items: center;
+}
+
+.underline {
+  width: 27rem;
+  height: 0.1rem;
+  background: var(--color-light-grey);
+}
+
+button {
+  display: grid;
+  place-items: center;
+  width: 4rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background: var(--color-purple);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+button:hover {
+  background: var(--color-off-black);
+}
+
+section {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.date {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+big {
+  font-size: 3rem;
+  font-weight: 800;
+  font-style: italic;
+}
+
+span {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--color-purple);
+}

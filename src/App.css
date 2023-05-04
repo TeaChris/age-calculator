@@ -1,0 +1,8 @@
+.app {
+  width: 35rem;
+  height: 30rem;
+  margin-top: 3rem;
+  padding: 2rem;
+  background: var(--color-white);
+  border-radius: 2rem 2rem 8rem 2rem;
+}
