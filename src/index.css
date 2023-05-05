@@ -75,6 +75,7 @@ input:focus {
 .underlineIcon {
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .underline {
@@ -120,4 +121,25 @@ span {
   font-size: 3rem;
   font-weight: 800;
   color: var(--color-purple);
+}
+
+.input-error {
+  font-size: 0.65rem;
+  font-weight: 100;
+  color: var(--color-light-red);
+}
+
+@media screen and (max-width: 600px) {
+  .underlineIcon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 4rem;
+    position: relative;
+  }
+
+  button {
+    position: absolute;
+    top: -2rem;
+  }
 }

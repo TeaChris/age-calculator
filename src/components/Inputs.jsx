@@ -1,25 +1,63 @@
-import { differenceInDays } from 'date-fns'
 import arrow from '../assets/icon-arrow.svg'
 
 const Inputs = ({ days, setDays, months, setMonths, years, setYears }) => {
+  const handleDaysChange = (e) => {
+    const inputDays = e.target.value
+    if (inputDays > 31) {
+      document.getElementById('day-error').innerText = 'Cannot be more than 31'
+    } else {
+      document.getElementById('day-error').innerText = ''
+      setDays(inputDays)
+    }
+  }
+
+  const handleMonthsChange = (e) => {
+    const inputMonths = e.target.value
+    if (inputMonths > 12) {
+      document.getElementById('month-error').innerText =
+        'Cannot be more than 12'
+    } else {
+      document.getElementById('month-error').innerText = ''
+      setMonths(inputMonths)
+    }
+  }
+
+  const handleYearsChange = (e) => {
+    const inputYears = e.target.value
+    if (inputYears > 2023) {
+      document.getElementById('year-error').innerText =
+        'cannot be more than 2023'
+    } else {
+      document.getElementById('year-error').innerText = ''
+      setYears(inputYears)
+    }
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+  }
+
   return (
-    <form action="">
+    <form onSubmit={handleSubmit}>
       <div className="inputs">
         <article>
-          <label htmlFor="day">day</label>
+          <label htmlFor="day" className={`${days > 31 && 'text-rose'}`}>
+            day
+          </label>
           <input
             type="number"
             name="day"
             id="day"
             placeholder="DD"
             min="1"
-            max="31"
+            // max="31"
             value={days}
-            onChange={(e) => setDays(e.target.value)}
+            onChange={handleDaysChange}
             minLength="1"
             maxLength="2"
             required
           />
+          <p id="day-error" className="input-error"></p>
         </article>
         <article>
           <label htmlFor="day">month</label>
@@ -31,9 +69,12 @@ const Inputs = ({ days, setDays, months, setMonths, years, setYears }) => {
             min="1"
             max="12"
             value={months}
-            onChange={(e) => setMonths(e.target.value)}
+            onChange={handleMonthsChange}
+            minLength="2"
+            maxLength="2"
             required
           />
+          <p id="month-error" className="input-error"></p>
         </article>
         <article>
           <label htmlFor="day">year</label>
@@ -45,9 +86,10 @@ const Inputs = ({ days, setDays, months, setMonths, years, setYears }) => {
             min="1900"
             max="2023"
             value={years}
-            onChange={(e) => setYears(e.target.value)}
+            onChange={handleYearsChange}
             required
           />
+          <p id="year-error" className="input-error"></p>
         </article>
       </div>
       <div className="underlineIcon">

@@ -1,17 +1,19 @@
 const Output = ({ years, months, days }) => {
+  const hasValues = years !== '' && months !== '' && days !== ''
+
   return (
     <section>
       <div className="date">
-        <span>{years}</span>
+        <span>{years ? years : '--'}</span>
         <big>year(s)</big>
       </div>
       <div className="date">
-        <span>{months}</span>
-        <big>months</big>
+        <span>{months ? months : '--'}</span>
+        <big>month(s)</big>
       </div>
       <div className="date">
-        <span>{days}</span>
-        <big>days</big>
+        <span>{days ? days : '--'}</span>
+        <big>day(s)</big>
       </div>
     </section>
   )
